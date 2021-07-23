@@ -1,0 +1,102 @@
+
+// teams
+###
+GET http://localhost:9000/api/team HTTP/1.1
+
+###
+GET http://localhost:9000/api/team?league=Colombiana HTTP/1.1
+
+###
+GET http://localhost:9000/api/team?country=Mexico HTTP/1.1
+
+###
+GET http://localhost:9000/api/team?league=Colombiana&country=Colombia HTTP/1.1
+
+###
+POST http://localhost:9000/api/team/add HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "futbolistas 1 FC",
+    "league": "colombiana",
+    "country": "colombia"
+}
+
+###
+POST http://localhost:9000/api/team/add HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "futbolistas 2 FC",
+    "league": "Mexicana",
+    "country": "Mexico"
+}
+
+###
+PUT http://localhost:9000/api/team/update/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "futbolistas 01 FC",
+    "league": "Colombiana",
+    "country": "Colombia"
+}
+
+###
+DELETE  http://localhost:9000/api/team/delete/1 HTTP/1.1
+
+
+// players
+###
+GET http://localhost:9000/api/player HTTP/1.1
+
+###
+GET http://localhost:9000/api/player?team=2 HTTP/1.1
+
+###
+GET http://localhost:9000/api/player?position=Attack HTTP/1.1
+
+###
+GET http://localhost:9000/api/player?nationality=Mexico HTTP/1.1
+
+###
+GET http://localhost:9000/api/player?team=2&position=Attack&nationality=Colombia HTTP/1.1
+
+###
+POST http://localhost:9000/api/player/add HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Raúl Andrés Agámez Rapalino",
+    "age": 22,
+    "team_id": 2,
+    "squad_number": 16,
+    "position": "Attack",
+    "nationality": "Colombia"
+}
+
+###
+POST http://localhost:9000/api/player/add HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Raúl Agámez",
+    "age": 22,
+    "team_id": 3,
+    "squad_number": 5,
+    "position": "Defense",
+    "nationality": "Mexico"
+}
+
+###
+PUT http://localhost:9000/api/player/update/2 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Eduardo Esteban"
+}
+
+###
+DELETE  http://localhost:9000/api/player/delete/2 HTTP/1.1
+
+// LOGIN
