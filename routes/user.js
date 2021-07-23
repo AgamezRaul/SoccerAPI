@@ -10,7 +10,7 @@ userRoutes.post('/add', (req, res) => {
         conn.query('INSERT INTO users set ?', [req.body], (err, rows)=>{
             if(err) return res.send(err)
 
-            res.send('Usuario agregado!')
+            res.send('Usuario agregado')
         })
     })
 })
